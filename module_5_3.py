@@ -1,5 +1,5 @@
 # Основа из предыдущей задачи
-class HOUSE:
+class House:
     def __init__(self, name, numb_f):
         self.name = name
         self.number_of_floor = numb_f
@@ -11,27 +11,27 @@ class HOUSE:
         return f'Название: {self.name}, кол-во этажей: {self.number_of_floor}.'
 # Создаём условия по дополнению класса House следующими специальными методами:
     def __eq__(self, other):    # 1
-        if isinstance(other.number_of_floor, int) and isinstance(other, HOUSE):
+        if isinstance(other.number_of_floor, int) and isinstance(other, House):
             return self.number_of_floor == other.number_of_floor
 
     def __lt__(self, other):    # 2
-        if isinstance(other.number_of_floor, int) and isinstance(other, HOUSE):
+        if isinstance(other.number_of_floor, int) and isinstance(other, House):
             return self.number_of_floor < other.number_of_floor
 
     def __le__(self, other):
-        if isinstance(other.number_of_floor, int) and isinstance(other, HOUSE):
+        if isinstance(other.number_of_floor, int) and isinstance(other, House):
             return self.number_of_floor <= other.number_of_floor
 
     def __gt__(self, other):
-        if isinstance(other.number_of_floor, int) and isinstance(other, HOUSE):
+        if isinstance(other.number_of_floor, int) and isinstance(other, House):
             return self.number_of_floor > other.number_of_floor
 
     def __ge__(self, other):
-        if isinstance(other.number_of_floor, int) and isinstance(other, HOUSE):
+        if isinstance(other.number_of_floor, int) and isinstance(other, House):
             return self.number_of_floor >= other.number_of_floor
 
     def __ne__(self, other):
-        if isinstance(other.number_of_floor, int) and isinstance(other, HOUSE):
+        if isinstance(other.number_of_floor, int) and isinstance(other, House):
             return self.number_of_floor != other.number_of_floor
 
     def __add__(self, value):
@@ -49,18 +49,28 @@ class HOUSE:
 
 # Вывод результатов по условиям задачи:
 
-h1 = HOUSE('Скала', 28)
-h2 = HOUSE('Хрущ', 5)
+h1 = House('Скала', 28)
+h2 = House('Хрущ', 5)
 
 print(h1)
 print(h2)
+print()
 # 1
 print(h1 == h2)
+print()
 # 3
-print(h1.__add__(10))
+print(h2.__add__(23))
 print(h1 == h2)
-print(h1.__add__(10))
-print(h2.__add__(10))
+print()
+print(h1.__add__(1))
+print(h2.__add__(2))
+print()
+print(h2.__iadd__(5))
+print(h2)
+print()
+print(h1.__radd__(5))
+print(h1)
+print()
 print(h1 < h2)
 print(h1 <= h2)
 print(h1 > h2)
